@@ -1,0 +1,54 @@
+<h1 class="mx-5 my-5 row">Admin Dashboard</h1>
+<button type="button" class="btn btn-warning mx-5 mb-3" (click)="logout()">Logout</button>
+<div class="row">
+  <div class="card mx-5 col-12" style="width: 25rem;">
+
+    <form [formGroup]="form" (ngSubmit)="edit()">
+      <div class="card">
+        <div class="text-center"></div>
+        <br>
+        <h4 class="p-2">Add/Edit Products To The Site </h4>
+
+        <div class="mb-3 px-3">
+          <label for="exampleInputEmail1" class="form-label">Product-id</label>
+          <input id="io" formControlName="productid" #productid class="form-control" id="pid" [(ngModel)]="pro">
+          <small class="text-danger">*Product-id is required</small>
+        </div>
+        <div class="mb-3 px-3">
+          <label for="productname" class="form-label">Product-Name</label>
+          <input formControlName="productname" #productname type="text" class="form-control" id="Name"[(ngModel)]="name">
+          <small class="text-danger">*Product-Name is required</small>
+        </div>
+        <div class="mb-3 px-3">
+          <label for="img" class="form-label">Product Image URL</label>
+          <input formControlName="img" #img type="text" class="form-control" id="Image" [(ngModel)]="image">
+          <!-- <small class="text-danger">*Product-Name is required</small> -->
+        </div>
+        <div class="mb-3 px-3">
+          <label for="des" class="form-label">Product Desription</label>
+          <input formControlName="des" #des type="text" class="form-control" id="pid" [(ngModel)]="di">
+          <!-- <small class="text-danger">*Product-Name is required</small> -->
+        </div>
+        <button type="submit" [disabled]="form.invalid" class="btn btn-primary mt-3">Submit
+          Data</button>
+        <div style="margin-top: 2%;">
+
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="col-6 ">
+    <div class="row px-3">
+      <div class="card p-2" style="width: 18rem;" *ngFor="let products of AllProducts">
+        <p>Product Id: {{products.productid}}</p>
+        <p>Product Name: {{products.productname}}</p>
+        <p>Product Description {{products.des}}</p>
+        <img src="{{products.img}}" alt="img not set">
+        <button type="button" class="btn btn-danger" (click)="deleteProduct(products.productid)">Delete</button>
+        <button type="button" class="btn btn-warning" (click)="editProduct(products)">Edit</button>
+        <div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <router-outlet></router-outlet>

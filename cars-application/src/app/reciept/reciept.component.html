@@ -1,0 +1,33 @@
+<div *ngIf="len==0">
+
+<hr>
+<h1 style="margin-left: 20px;"> Reciept </h1>
+<hr>
+
+<h3 style="margin-left: 20px;"> The Products you added to cart  </h3>
+<hr>
+<div class="col-3 m-2 " >
+    <div class="row px-3 m-3 ">
+        <div class=" p-2" style="width: 18rem;" *ngFor="let products of cars">
+            <img src="{{products.img}}" alt="img not set">
+         <div class=" info">
+            <!-- <p>Product Id: {{products.productid}}</p> -->
+            <p>Product Name: {{products.productname}}</p>
+            <p>Product Description {{products.des}}</p>
+        </div>
+        <button (click)="view()" style="float: left "  class="btn btn-outline-warning btn-sm" > View-Cart</button>
+
+        </div>
+        <hr>
+        <button (click)="submit()" style="float: left "  class="btn btn-outline-success btn-sm" > submit Order</button>
+
+        <p></p>
+
+    </div>
+</div>
+</div>
+<div *ngIf="len!=0" >
+
+     <h1 class="text-success " id="empty"   >Cart is Empty</h1>
+     <button class="btn btn-outline-success " routerLink="/Dashboard" id="emp"> Go To Home</button>
+     </div>

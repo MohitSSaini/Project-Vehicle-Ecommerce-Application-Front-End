@@ -1,0 +1,15 @@
+.card{
+    border: none;
+    width: 500px;
+    padding: 40px;
+    position: absolute;
+    top: 400px;
+    left: 50%;
+     transform: translate(-50%,-50%);
+     background-color: hsla(205, 46%, 30%,1);
+     background:linear-gradient(180deg , hsla(205, 46%, 30%,1)0%, hsla(260, 29%, 36%,1)100%);
+}
+.btn-dark-blue {
+  background-color: darkblue ;
+  color: white ;
+}

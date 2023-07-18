@@ -1,0 +1,21 @@
+<div id="contain">
+  <mat-card class="shadow-lg p-3 mb-5 bg-body-tertiary rounded" class="excard">
+    <mat-card-header>
+      <mat-card-title class="title"><a routerLink="/">Car-Lelo</a> </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p></p>
+      <p id="text" style="margin-left:5px ;">{{ longText }}</p>
+    </mat-card-content>
+    <mat-card-actions class="log" *ngIf="!logindetails">
+      <button mat-button mat-button color="accent"   >
+       <a routerLink="/login">Log In</a>
+      </button>
+      <button mat-button><a routerLink="/signup"> Signup </a></button>
+    </mat-card-actions>
+    <mat-card-footer>
+
+    </mat-card-footer>
+  </mat-card>
+</div>
+<router-outlet></router-outlet>

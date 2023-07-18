@@ -1,0 +1,23 @@
+<div>
+    <div class="col-6 m-2 ">
+       <button type="button" class="btn btn-warning mx-5 mb-3" (click)="logout()">Logout</button>
+        <div class="row px-3 m-3 ">
+            <div class="card p-2" style="width: 18rem;" *ngFor="let products of cars">
+                <p>Product Id: {{products.productid}}</p>
+                <p>Product Name: {{products.productname}}</p>
+                <p>Product Description {{products.des}}</p>
+                <img src="{{products.img}}" alt="img not set">
+                <button type="button" class="btn btn-danger" (click)="deleteitem(products.productname)">Delete</button>
+
+            </div>
+        </div>
+    </div>
+
+    <button type="button" class="btn btn-outline-warning"  (click)="senddata();">Proceed To Check Out</button>
+
+
+</div>
+<div *ngIf="len!=0" >
+    <h1 class="text-success " id="empty"   >Cart is Empty</h1>
+    <button class="btn btn-outline-success " routerLink="/Dashboard" id="emp"> Go To Home</button>
+    </div>

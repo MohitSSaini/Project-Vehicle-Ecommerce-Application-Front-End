@@ -1,0 +1,101 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <form [formGroup]="form" (ngSubmit)="login()">
+        <div class="card">
+          <div class="text-center"></div>
+          <h1 style="color: aliceblue;">Login</h1>
+          <h5 style="color: bisque">Please enter email & password!!</h5>
+          <div class="mb-3">
+            <label class="form-label" style="color: aliceblue;">Email address</label>
+            <input type="email" formControlName="email" class="form-control" id="exampleInputEmail1" required="required" aria-describedby="emailHelp">
+            <div *ngIf="form.controls['email'].invalid && (form.controls['email'].dirty || form.controls['email'].touched)" style="color: red;">
+              <div *ngIf="form.controls['email'].hasError('required')">Email is required</div>
+              <div *ngIf="form.controls['email'].hasError('email')">Invalid email format</div>
+              <div *ngIf="form.controls['email'].hasError('invalidEmail')">Invalid email domain</div>
+            </div>
+            <div id="emailHelp" style="color: rgb(255, 255, 255);" class="form-text">We'll never share your email with anyone else.</div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label" style="color: aliceblue;">Password</label>
+            <input type="password" formControlName="password" class="form-control" id="exampleInputPassword1">
+            <div *ngIf="form.controls['password'].invalid && (form.controls['password'].dirty || form.controls['password'].touched)" style="color: red;">
+              <div *ngIf="form.controls['password'].hasError('required')">Password is required</div>
+              <div *ngIf="form.controls['password'].hasError('minlength')">Password must be at least 6 characters long</div>
+            </div>
+            <div id="passwordHelp" style="color: rgb(255, 255, 255);" class="form-text">we never share your password with anyone else.</div>
+          </div>
+          <button type="submit" [disabled]="form.invalid" class="btn btn-secondary" [ngClass]="{'btn-dark-blue': form.valid}" style="width: 100px;">Login</button>
+          <!-- <button type="submit" [disabled]="form.invalid" class="btn btn-secondary" style="width: 100px;">Login</button> -->
+          <div style="margin-top: 2%;">
+            <a routerLink="/signup" style="color: aliceblue;">New User! Click Here To Sign-Up</a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="container">
+  <div class="row">
+     <div class="col-md-6">
+      <form [formGroup]="form" (ngSubmit)="login()">
+        <div class="card">
+          <div class="text-center"></div>
+          <h1 style="color: aliceblue;">Login</h1>
+          <h5 style="color:bisque">Please enter email & password !!</h5>
+          <div class="mb-3">
+            <label class="form-label" style="color: aliceblue;">Email address</label>
+            <input type="email" formControlName="email" class="form-control" id="exampleInputEmail1"
+              aria-describedby="emailHelp">
+            <div id="emailHelp" style="color: rgb(255, 255, 255);" class="form-text" >We'll never share your email with anyone else.</div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label" style="color: aliceblue;">Password</label>
+            <input type="password" formControlName="password" class="form-control" id="exampleInputPassword1">
+            <div id="passwordHelp"style="color: rgb(255, 255, 255);" class="form-text" >we never share your password to another else.</div>
+          </div>
+          <button type="submit" [disabled]="form.invalid" class="btn btn-secondary " style="width: 100px;">Login</button>
+          <div style="margin-top: 2%;">
+            <a routerLink="/signup"style="color: aliceblue;" >New User ! Click Here To Sign-Up </a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet> -->

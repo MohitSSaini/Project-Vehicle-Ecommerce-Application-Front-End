@@ -1,0 +1,41 @@
+<form [formGroup]="form" (ngSubmit)="signUp()" >
+    <div class="card">
+        <div class="text-center"></div>
+        <h1 style="color: aliceblue;" >Sign-Up</h1>
+              <h5 style="color: rgb(233, 233, 233);">Please Fill The Details !!</h5>
+
+    <div class="mb-3">
+      <label for="username" class="form-label" style="color: rgb(255, 255, 255);">Username</label>
+      <input formControlName="username" #username type="username" class="form-control"  aria-describedby="username">
+      <small class="text-danger" *ngIf="form.controls['username'].touched && form.controls['username'].invalid">*Username is required</small>
+    </div>
+
+    <div class="mb-3">
+        <label for="email" class="form-label" style="color: aliceblue;">Email address</label>
+        <input formControlName="email" type="email" class="form-control" #email name="email" >
+        <small class="text-danger" *ngIf="form.controls['email'].touched && form.controls['email'].invalid">*email is required</small>
+
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label" style="color: aliceblue;">Address</label>
+        <input formControlName="address" type="text" class="form-control"  aria-describedby="address">
+        <small class="text-danger" *ngIf="form.controls['address'].touched && form.controls['address'].invalid">*address is required</small>
+
+      </div>
+
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label" style="color: aliceblue;">Password</label>
+      <input formControlName="password" type="password" class="form-control">
+      <small class="text-danger" *ngIf="form.controls['password'].touched && form.controls['password'].invalid">*password is required</small>
+
+    </div>
+    <button type="submit" [disabled]="form.invalid" class="btn btn-secondary" [ngClass]="{'btn-dark-blue': form.valid}" style="width: 100px;">SignUp</button>
+
+    <!-- <button type="submit" [disabled]="form.invalid" class="btn btn-primary mt-3" >Sign-Up</button> -->
+    <div style="margin-top: 2%;">
+    <a routerLink="/login" style="color: aliceblue;">If Already Registerd then Click Here To Log-In </a>
+</div>
+</div>
+  </form>
+  <router-outlet></router-outlet>
